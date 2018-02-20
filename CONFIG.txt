@@ -1,0 +1,43 @@
+//Initialize Angular
+1. ng new NameProject
+
+//Generate component
+2. ng generate component sign-up
+	ng g c sign-up
+//If exist problem update angular client
+2.1 npm update -g @angular/cli
+2.2 npm update
+
+//Generate Service on shared folder
+3. ng g s user
+
+//Generate Model on shared folder
+4. ng g class user --type=model
+
+//Run client
+5. ng serve --open
+
+//Notifications
+6. npm install ngx-toastr --save
+
+
+
+/***Back-End***/
+1. Install asp.net identity from management packages Nuget
+2. Web.Config add String Connections
+//Crea tablas necesarias en la BD para las sesiones
+3. Consola de Admin de Paquetes > enable-migrations
+				> add-migration 'InitialDB'
+				> update-database
+				> add-migration ChangedDefaultTableNames(IdentityModels Line 24)
+				> update-database
+				> add-migration ChangedDefaultColumnNames(IdentityModels Line 12)
+				> update-database
+				> Install-Package Microsoft.AspNet.WebApi.Cors -Version 5.2.3 (Accept request from other port)
+				> Update-Package Microsoft.AspNet.WebApi -reinstall
+
+	
+4. Packages from autenticathion
+	>Identity.Owin
+	>Owin.Host
+	>Owin.Cors
